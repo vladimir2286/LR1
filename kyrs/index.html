@@ -3,157 +3,312 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        /* Стили для затемнения фона */
-        body.overlay-active {
-            overflow: hidden;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1;
-        }
-
-        /* Стили для формы авторизации */
-        .login-form {
-            display: none; /* Изначально скрытая форма */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            z-index: 2;
-        }
-
-        /* Стили для кнопки */
-        .login-button {
-            cursor: pointer;
-        }
-        .oneline {
-            display: inline-block;
-        }   
-    </style>
     <title>Bootstrap demo</title>
+    <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
-    <header class="golova">
-        <nav class="navbar bg-body-tertiary">
-            <div class="container">
-              <a class="navbar-brand" href="#">
-                <img src="C:\Users\user\Desktop\kyrs/icon.jpg" alt="Bootstrap" width="30" height="24">
-              </a>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-                  <!-- Затемнение фона и форма авторизации -->
-    <div class="overlay" id="overlay" onclick="closeOverlay()"></div>
-    <div class="login-form" id="loginForm">
-        <!-- Ваши элементы формы авторизации здесь -->
-        <label for="username"></label>
-        <input type="email" id="username" name="email" placeholder="E-mail" required>
-        <br>
-        <label for="password"></label>
-        <input type="password" id="password" name="password" placeholder="Пароль" required>
-        <br>
-        <input type="submit" value="Войти">
-        <p>Еще не на Yell? Зарегистрируйтесь, это займет не более минуты.</p>
-    </div>
-
-    <!-- Кнопка авторизации -->
-    <div class="login-button" onclick="toggleOverlay()">Вход</div>
-
-    <script>
-        // Функция для отображения/скрытия формы и затемнения фона
-        function toggleOverlay() {
-            var overlay = document.getElementById("overlay");
-            var loginForm = document.getElementById("loginForm");
-            document.body.classList.toggle("overlay-active");
-            overlay.style.display = (overlay.style.display === "block") ? "none" : "block";
-            loginForm.style.display = (loginForm.style.display === "block") ? "none" : "block";
-        }
-
-        // Функция для закрытия формы при клике на затемненный фон
-        function closeOverlay() {
-            var overlay = document.getElementById("overlay");
-            var loginForm = document.getElementById("loginForm");
-            document.body.classList.remove("overlay-active");
-            overlay.style.display = "none";
-            loginForm.style.display = "none";
-        }
-    </script>
-            </div>
-          </nav>
+    <header>
+      <nav class="navbar" style="background-color: #FF2400;">
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <img src="icon.jpg" alt="Иконка" class="headdd">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          <div class="knopki">
+            <button class="btn btn-sm btn-outline-secondary" type="button">Вход</button>
+            <button class="btn btn-outline-success me-2" type="button">Регистрация</button>
+          </div>  
+        </div>
+      </nav>
     </header>
     <main class="glavnoe">
-        
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Волгоград</a></li>
-              <li class="breadcrumb-item"><a href="#">Образование</a></li>
-              <li class="breadcrumb-item"><a href="#">Школы и лицеи</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Школа Царицынская № 1 на Советской улице, 27</li>
-            </ol>
-          </nav>
-          <img src="C:\Users\user\Desktop\kyrs/icon2.svg" class="oneline">
-          <p class="oneline">Школа Царицынская № 1 на Советской улице, 27</p>
-          <button>+7 844 252-90-80</button>
-          <table class="table">
-            <tbody>
-              <tr>
-                
-                <td>+7 844 252-90-80</td>
-                <td>Россия, г Волгоград, ул Советская, д 27
-                    1 этаж</td>
-              </tr>
-              <tr>
-                
-                <td></td>
-                <td>Район:Центральный</td>
-              </tr>
-              <tr>
-                
-                <td colspan="2"></td>
-              </tr>
-            </tbody>
-          </table>
-          <h1> Про «Школа Царицынская № 1 на Советской улице, 27»</h1>
+      <div class="container-fluid text-center ">
+        <div class="row row-cols-2">
+          <div class="col">
+            <nav aria-label="breadcrumb">
+              <div class="xleb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Волгоград</a></li>
+                  <li class="breadcrumb-item"><a href="#">Образование</a></li>
+                  <li class="breadcrumb-item"><a href="#">Школы и лицеи </a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Школа Царицынская № 1 на Советской улице, 27</li>
+                </ol>
+              </div> 
+            </nav>
+            <div class="container text-center">
+              <div class="row">
+                <div class="container pt-5">
+                  <div class="d-flex align-items-center">
+                    <img src="iconhead.png" alt="Иконка" class="headdd">
+                    <h4 class="school">Школа Царицынская № 1 на<br> Советской улице, 27</h4>
+                    <div class="vova">
+                      <button type="button" class="btn btn-danger">+7 844 252-90-80</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table3">
+              <table>
+                <tr>
+                  <td>+7 844 252-90-80</td>
+                  <td>Россия, г Волгоград, ул Советская, д 27 1 этаж</td>
+                  <td>Сейчас закрыто</td>
+                </tr>
+                <tr>
+                  <td>16 отзывов</td>
+                  <td>Район:Центральный</td>
+                  <td>Часы работы</td>
+                </tr>
+              </table>
+            </div> 
+          </div>
+          <div class="karta"><img src="karta.png"></div>
+          <div class="col">
+            <h2 class="school1">Про «Школа Царицынская № 1 на Советской улице, 27»</h2>
+            <div class="school1">
+              <button type="button" class="btn btn-info">Предложить изменения</button>
+              <button type="button" class="btn btn-info">Сообщить о закрытии</button>
+              <button type="button" class="btn btn-info">Вы владелец?</button>
+            </div>
+            <p class="school1">Школа Царицынская № 1 на Советской улице, 27 предлагает свои услуги людям, которые заняты поиском частного учебного заведения для своего ребенка. Школьные годы — время, когда выстраивается личность человека. В этом учреждении ребенок, кроме прохождения программы на занятиях, сможет понять, человеком с каким характером он желает стать, в каком направлении идти дальше, в какой колледж или вуз идти учиться после окончания обучения здесь. Для большинства людей значимый фактор — учительский состав учреждения, и отыскать информацию о нем вы сможете на сайте организации.</p>
+
+              <p class="school1">Найти организацию можно по адресу Россия, г Волгоград, ул Советская, д 27 (рабочие часы: с понедельника по пятницу - 08:00-18:00).</p>
+              <p class="school1">Вас проконсультируют по номеру +7 844 252-90-80. Сайт: zarizinz.ru</p>
+              <p class="school1">Ищите нас в соцсетях:<a href="https://vk.com/public99261786">Вконтакте</a> </p>
+              <div class="container">
+                <div class="d-flex align-items-center">
+                  <img src="iconbook.png" alt="Иконка" class="headdd">
+                  <p class="school">Образование 4</p>
+                </div>
+              </div>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Дистанционное</a></li>
+                  <li class="breadcrumb-item"><a href="#">Частная школа</a></li>
+                  <li class="breadcrumb-item"><a href="#">Школа</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Школы</li>
+                </ol>
+              </nav>
+              <div class="container">
+                <div class="d-flex align-items-center">
+                  <img src="iconpeople.png" alt="Иконка" class="headdd">
+                  <p class="school">Форма собственности 1</p>
+                </div>
+              </div>
+              <p class="school1">Частная</p>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Оставить отзыв</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Вы здесь учились? Поделитесь студенченскими историями!" rows="3"></textarea>
+                <div class="mb-3 d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+              </div>
+          </div>
+          <div class="col-p-0">
+            <p class="school1">Ближайшие по району</p>
+            <div class="bok">
+              <div class="row">
+                <div class="container mb-0">
+                  <div class="d-flex align-items-center">
+                    <img src="iconhead1.jpg" alt="Иконка" class="headdd">
+                      <p class="school">Средняя частная интегрированная школа</p>
+                  </div>
+                  <div class="rating">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bok">
+              <div class="row">
+                <div class="container">
+                  <div class="d-flex align-items-center">
+                    <img src="iconhead1.jpg" alt="Иконка" class="headdd">
+                    <p class="school">Лицей №5 им. Ю.А. Гагарина в Центральном районе</p>
+                  </div>
+                  <div class="rating">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bok">
+              <div class="row">
+                <div class="container">
+                  <div class="d-flex align-items-center">
+                    <img src="iconhead1.jpg" alt="Иконка" class="headdd">
+                    <p class="school">Средняя школа №81</p>
+                  </div>
+                  <div class="rating">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bok">
+              <div class="row">
+                <div class="container">
+                  <div class="d-flex align-items-center">
+                    <img src="iconhead1.jpg" alt="Иконка" class="headdd">
+                    <p class="school">Вечерняя (сменная) общеобразовательная школа №5 на Волгодонской улице</p>
+                  </div>
+                  <div class="rating">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bok">
+              <div class="row">
+                <div class="container">
+                  <div class="d-flex align-items-center">
+                    <img src="iconhead1.jpg" alt="Иконка" class="headdd">
+                    <p class="school">Средняя школа №83</p>
+                  </div>
+                  <div class="rating">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="school1">Ближайшие по улице</p>
+            <div class="bok2">
+              <div class="bok">
+                <div class="row">
+                  <div class="container">
+                    <div class="d-flex align-items-center">
+                      <img src="iconhead1.jpg" alt="Иконка" class="headdd">
+                      <p class="school">Средняя школа Родник</p>
+                    </div>
+                    <div class="rating">
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bok">
+                <div class="row">
+                  <div class="container">
+                    <div class="d-flex align-items-center">
+                      <img src="iconhead1.jpg" alt="Иконка" class="headdd">
+                      <p class="school">Частная школа Царицынская №1 в Центральном районе</p>
+                    </div>
+                    <div class="rating">
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bok">
+                <div class="row">
+                  <div class="container">
+                    <div class="d-flex align-items-center">
+                      <img src="iconhead1.jpg" alt="Иконка" class="headdd">
+                      <p class="school">Средняя школа №19 в Центральном районе</p>
+                    </div>
+                    <div class="rating">
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
           
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-secondary">Secondary</button>
-          <button type="button" class="btn btn-success">Success</button>
-          <p>Школа Царицынская № 1 на Советской улице, 27 предлагает свои услуги людям, которые заняты поиском частного учебного заведения для своего ребенка. Школьные годы — время, когда выстраивается личность человека. В этом учреждении ребенок, кроме прохождения программы на занятиях, сможет понять, человеком с каким характером он желает стать, в каком направлении идти дальше, в какой колледж или вуз идти учиться после окончания обучения здесь. Для большинства людей значимый фактор — учительский состав учреждения, и отыскать информацию о нем вы сможете на сайте организации.</p>
-
-<p>Найти организацию можно по адресу Россия, г Волгоград, ул Советская, д 27 (рабочие часы: с понедельника по пятницу - 08:00-18:00).</p>
-
-<p>Вас проконсультируют по номеру +7 844 252-90-80. Сайт: zarizinz.ru </p>
-<p class="oneline">Ищите нас в соцсетях:</p><a href="https://vk.com/public99261786" class="oneline">Вконтакте</a>
-<p>Образование 4</p>
-<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Дистанционное</a></li>
-    <li class="breadcrumb-item"><a href="#">Частная школа</a></li>
-    <li class="breadcrumb-item"><a href="#">Школа</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Школы</li>
-  </ol>
-</nav>
-<p>Форма собственности 1</p>
-<a href="№">Частная</a>
-          
-
-
+        </div>
+      </div>
     </main>
-    <footer class="podval">
-    
+    <footer>
+      <div class="container text-center">
+        <div class="row align-items-end">
+          <div class="col">
+            <nav class="nav flex-column">
+              <p class="orange"><strong>Бизнес</strong></p>
+              <a class="nav-link" href="#">Yell Business</a>
+              <a class="nav-link" href="#">Добавить компанию</a>
+            </nav>
+          </div>
+          <div class="col">
+            <table>
+              <tr>
+                <td class="orange"><strong>Компания</strong></td>
+              </tr>
+              <tr>
+                <td>О компании</td>
+                <td>Правила</td>
+                <td>Наш Блог</td>
+              </tr>
+              <tr>
+                <td>Помощь</td>
+                <td>Контакты</td>
+                <td>Работа в Yell</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col">
+            <div class="podval">
+              <p class="orange"><strong >Категория</strong></p>
+              <select>
+                <option>Культура и искусство</option>
+                <option>Бары и клубы</option>
+                <option>Маркетинг и реклама</option>
+                <option>Сад, огород, растения</option>
+                <option>Спортивные базы</option>
+              </select>
+            </div>  
+          </div>
+          
+          <div class="col">
+            <div class="podval">
+              <p class="orange"><strong>Ваш город</strong></p>
+              <select>
+                <option>Волгоград</option>
+                <option>Москва</option>
+                <option>Спб</option>
+                <option>Новгород</option>
+                <option>Краснодар</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
